@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreText
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,8 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        registerBundledFonts()
         return true
+    }
+
+    /// Registers every bundled `.ttf` (e.g. `Resources/Fonts/Inter/`) with CoreText,
+    /// the same way the vrtx-sdk-ios example app makes font families available at runtime.
+    private func registerBundledFonts() {
+        guard let enumerator = FileManager.default.enumerator(at: Bundle.main.bundleURL, includingPropertiesForKeys: nil) else { return }
+        for case let url as URL in enumerator where url.pathExtension.lowercased() == "ttf" {
+            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+        }
     }
 
     // MARK: UISceneSession Lifecycle

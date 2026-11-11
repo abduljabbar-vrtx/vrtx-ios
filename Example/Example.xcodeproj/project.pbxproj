@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1EC000000000000000000E1 /* TalsecRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = A1EC000000000000000000E2 /* TalsecRuntime */; };
 		49B085C42FB349B300786686 /* VRTX in Frameworks */ = {isa = PBXBuildFile; productRef = 49B085C32FB349B300786686 /* VRTX */; };
+		A1EC000000000000000000E1 /* TalsecRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = A1EC000000000000000000E2 /* TalsecRuntime */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -368,14 +368,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A1EC000000000000000000E4 /* XCRemoteSwiftPackageReference "Free-RASP-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/talsec/Free-RASP-iOS";
-			requirement = {
-				kind = exactVersion;
-				version = 6.14.5;
-			};
-		};
 		49B085C22FB349B300786686 /* XCRemoteSwiftPackageReference "vrtx-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vrtx-fintech/vrtx-ios";
@@ -384,18 +376,26 @@
 				minimumVersion = 0.1.17;
 			};
 		};
+		A1EC000000000000000000E4 /* XCRemoteSwiftPackageReference "Free-RASP-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/talsec/Free-RASP-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 6.14.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A1EC000000000000000000E2 /* TalsecRuntime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A1EC000000000000000000E4 /* XCRemoteSwiftPackageReference "Free-RASP-iOS" */;
-			productName = TalsecRuntime;
-		};
 		49B085C32FB349B300786686 /* VRTX */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 49B085C22FB349B300786686 /* XCRemoteSwiftPackageReference "vrtx-ios" */;
 			productName = VRTX;
+		};
+		A1EC000000000000000000E2 /* TalsecRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1EC000000000000000000E4 /* XCRemoteSwiftPackageReference "Free-RASP-iOS" */;
+			productName = TalsecRuntime;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
